@@ -28,7 +28,6 @@ def pregunta_01():
     # Retorne `X` y `y`
     return X, y
 
-
 def pregunta_02():
     """
     Preparación de los conjuntos de datos.
