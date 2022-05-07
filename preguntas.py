@@ -6,10 +6,6 @@ En este laboratorio se entrenara un modelo de regresión lineal multiple que inc
 selección de las n variables más relevantes usando una prueba f.
 
 """
-# pylint: disable=invalid-name
-# pylint: disable=unsubscriptable-object
-
-import numpy as np
 import pandas as pd
 
 def pregunta_01():
@@ -38,8 +34,7 @@ def pregunta_02():
     Preparación de los conjuntos de datos.
     -------------------------------------------------------------------------------------
     """
-    import numpy as np
-    
+    import numpy as np    
     # Importe train_test_split
     from sklearn.model_selection import train_test_split
 
