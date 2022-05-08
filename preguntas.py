@@ -72,7 +72,7 @@ def pregunta_03():
     from sklearn.feature_selection import SelectKBest,f_regression
     from sklearn.linear_model import LinearRegression
     from sklearn.model_selection import GridSearchCV
-    from sklearn.pipeLine import PipeLine
+    from sklearn.pipeline import Pipeline
     from sklearn.preprocessing import OneHotEncoder
     
     pipeline = PipeLine(
