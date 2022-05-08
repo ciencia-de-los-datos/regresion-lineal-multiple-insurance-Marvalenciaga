@@ -6,6 +6,7 @@ En este laboratorio se entrenara un modelo de regresión lineal multiple que inc
 selección de las n variables más relevantes usando una prueba f.
 
 """
+import numpy as np
 import pandas as pd
 
 def pregunta_01():
@@ -23,7 +24,7 @@ def pregunta_01():
     X = df.copy()
 
     # Remueva la columna `charges` del DataFrame `X`.
-    X.pap("charges")
+    X.pop("charges")
 
     # Retorne `X` y `y`
     return X, y
