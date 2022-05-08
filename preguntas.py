@@ -69,9 +69,9 @@ def pregunta_03():
     # Importe Pipeline
     # Importe OneHotEncoder
     from sklearn.compose import make_column_selector, make_column_transformer
-    from sklearn.feature_selection import selectKBest,f_regression
+    from sklearn.feature_selection import SelectKBest,f_regression
     from sklearn.linear_model import LinearRegression
-    from sklearn.model_selection import gridSearchCV
+    from sklearn.model_selection import GridSearchCV
     from sklearn.pipeLine import PipeLine
     from sklearn.preprocessing import OneHotEncoder
     
@@ -94,7 +94,7 @@ def pregunta_03():
             # características más importantes. Utilice la función f_regression.
             (
                 "selectKBest",
-                selectKBest(score_func=f_regression),
+                SelectKBest(score_func=f_regression),
             ),
             # Paso 3: Construya un modelo de regresión lineal.
             (
@@ -110,17 +110,17 @@ def pregunta_03():
     # Defina un diccionario de parámetros para el GridSearchCV. Se deben
     # considerar valores desde 1 hasta 11 regresores para el modelo
     param_grid = {
-        "selectkbest_k": np.orange(1 , 12, 1)
+        "selectKBest__k": np.arange(1 , 12, 1)
     }
 
     # Defina una instancia de GridSearchCV con el pipeline y el diccionario de
     # parámetros. Use cv = 5, y como métrica de evaluación el valor negativo del
     # error cuadrático medio.
-    gridSearchCV = gridSearchCV(
+    gridSearchCV = GridSearchCV(
         estimator=pipeline,
         param_grid= param_grid,
         cv=5,
-        scoring="neg:mean_squared_error",
+        scoring="neg_mean_squared_error",
         refit=True,
         return_train_score=True,
     )
